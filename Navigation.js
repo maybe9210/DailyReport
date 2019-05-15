@@ -5,8 +5,10 @@ import HomeScreen from "./Page/Home";
 import SettingsScreen from "./Page/Setting";
 import StatisticsScreen from "./Page/Statistics";
 import GuideScreen from "./Page/Guide";
+import MyDay from "./Page/MyDay";
 
 const TabNavigator = createBottomTabNavigator({
+  MyDay: MyDay,
   Home: HomeScreen,
   Guide: GuideScreen,
   Statistics: StatisticsScreen,
