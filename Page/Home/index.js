@@ -1,6 +1,8 @@
 import React from "react";
 import {TextInput, View, Keyboard} from "react-native";
 import {Constants, Notifications, Permissions} from 'expo';
+// import Popup from "../../Components/Popup.js";
+import Dialog, { DialogTitle, DialogButton, DialogFooter} from 'react-native-popup-dialog';
 
 class HomeScreen extends React.Component {
   onSubmit(e) {
@@ -55,10 +57,26 @@ class HomeScreen extends React.Component {
   render() {
       return (
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
-              <TextInput
-                  onSubmitEditing={this.onSubmit}
-                  placeholder={'time in ms'}
-              />
+             
+              {/* <Popup></Popup> */}
+              <Dialog ref={popupDialog => {}}
+                visible={true}
+                dialogTitle={<DialogTitle title="please, select your concentrate" />}
+                // height={0.4}
+                // width={0.7}
+                footer={
+                    <DialogFooter>
+                        <DialogButton text="BEST"></DialogButton>
+                        <DialogButton text="NICE"></DialogButton>
+                        <DialogButton text="GOOD"></DialogButton>
+                    </DialogFooter>
+                }
+                >
+                
+                
+
+              </Dialog>
+                
           </View>
       );
   }
